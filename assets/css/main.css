@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    color: #444444;
+}
+
+header {
+    background: white;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 1rem;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+
+        h2 {
+            margin-left: 0.4rem;
+        }
+    }
+
+    ul {
+        display: flex;
+        list-style: none;
+
+        li {
+            margin: 0 1rem;
+
+            a {
+                text-decoration: none;
+                padding: .5rem .7 rem;
+                transition: all 0.5s ease-in-out;
+                font-weight: 600;
+            }
+
+            a:hover {
+                color: #3b8af2;
+            }
+        }
+    }
+
+    .menu-toggle {
+        cursor: pointer;
+        display: none;
+    }
+}
+
+footer {
+    .info {
+        display: flex;
+        padding: 1rem 1rem;
+        justify-content: space-evenly;
+        color: #444444;
+        font-size: 14px;
+        line-height: 1.5rem;
+        background: white;
+        flex-wrap: wrap;
+        gap: 2rem;
+    
+        .social-media {
+    
+            a {
+                text-decoration: none;
+    
+                svg {
+                    height: 32px;
+                    width: 32px;
+                    fill: #106eea;
+                }            
+            }
+    
+        }
+    
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+    
+            li {
+                padding: 4px 0;
+                display: flex;
+                align-items: center;
+    
+                a {
+                    text-decoration: none;
+                }
+    
+                a:hover {
+                    color: #106eea;
+                }
+            }
+        }
+    }
+
+    .copyright {
+        display: flex;
+        padding: 1rem 1rem;
+        background: #f1f6fe;;
+        align-items: center;
+        justify-content: center;
+        font-size: small;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        .menu-toggle{
+            cursor: pointer;
+            display: block;
+        }
+
+        ul {
+            flex-direction: column;
+            position: fixed;
+            width: 300px;
+            height: 100vh;
+            box-shadow: 3px 0 3px -3px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(6px);
+            top: 60px;
+            left: -100%;
+
+            li {
+                a {
+                    display: block;
+                    margin: 8px;
+                }
+            }
+        }
+    }
+}
