@@ -54,7 +54,7 @@ header {
         cursor: pointer;
         display: none;
     }
-}
+} 
 
 footer {
     .info {
@@ -106,7 +106,7 @@ footer {
     .copyright {
         display: flex;
         padding: 1rem 1rem;
-        background: #f1f6fe;;
+        background: #f1f6fe;
         align-items: center;
         justify-content: center;
         font-size: small;
