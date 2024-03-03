@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jains Spring Meadows</title>
+    <meta name="description" content=">Terms and conditions of Jains Spring Meadows">
+    <title>Terms and Conditions</title>
     <link href="assets/img/favicon.png" rel="icon">
     <link rel="stylesheet" href="assets/css/main.css">
     <style>
         main {
-            background: #f1f6fe;
-
             .terms {
                 padding: 8px 24px;
                 
@@ -38,7 +37,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Gallery</a></li>
-                <li><a href="#">Contact</a></li>              
+                <li><a href="contact.html">Contact</a></li>              
             </ul>
             <div class="menu-toggle">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
@@ -208,29 +207,13 @@
         </div>
     </footer>
 
-    <script>    
+    <script>
         const toggle = document.querySelector('.menu-toggle'); 
         toggle.addEventListener('click', () => {
             const menu = document.querySelector('nav ul');
             menu.style.transition = 'all 0.5s ease-in-out';
             menu.style.left = menu.style.left == '0px' ? '-100%' : '0px';
         })
-
-        function showImage(index) {
-            const images = document.getElementsByClassName('image-item');
-            const selectors = document.getElementsByClassName('image-selector');
-
-            for(i = 0; i < images.length; i++) {
-                if (i == index) {
-                    selectors[i].classList.add('active');
-                    images[i].classList.remove('hide-image');
-                } else {
-                    selectors[i].classList.remove('active');
-                    images[i].classList.add('hide-image');
-                }
-            } 
-        };
-
     </script>
 </body>
 </html>
