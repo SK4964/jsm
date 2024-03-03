@@ -69,9 +69,36 @@ main {
 }
 
 @keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
+    from {
+        opacity: .4
+    } 
+    to {
+        opacity: 1
+    }
 }  
+
+@media (max-width: 1024px) {
+    main {
+        .title {
+            h1 {
+                font-size: 32px;
+                color: #222222;
+            }
+    
+            h2 {
+                font-size: 18px;
+            }
+        }
+
+        .image-item {
+            .home-image {
+                width: 784px;
+                height: 640px;
+                object-fit: cover;
+            }
+        }
+    }
+}
 
 @media (max-width: 768px) {
     main {
@@ -82,7 +109,7 @@ main {
             }
     
             h2 {
-                font-size: 16px;
+                font-size: 14px;
             }
         }
 

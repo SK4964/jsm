@@ -109,7 +109,16 @@ footer {
         background: #f1f6fe;
         align-items: center;
         justify-content: center;
-        font-size: small;
+        font-size: medium;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 1024px) {
+    footer {
+        .copyright {
+            font-size: small;
+        }
     }
 }
 
@@ -136,6 +145,12 @@ footer {
                     margin: 8px;
                 }
             }
+        }
+    }
+
+    footer {
+        .copyright {
+            font-size: smaller;
         }
     }
 }
