@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content=">Spread over an area of 2.3 acres, Jains Spring Meadows is one of the spacious housing societies in the Thazhambur, Chennai. With all the required amenities available, Jains Spring Meadows is a lush green paradise.">
-    <title>Jains Spring Meadows</title>
+    <meta name="description" content=">Spread over an area of 2.3 acres, Jains Spring Meadows is one of the spacious housing societies in the Thazhambur">
+    <title>Jains Spring Meadows - About Us</title>
     <link href="assets/img/favicon.png" rel="icon">
     <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/about.css">
 </head>
 <body>
     <header>
@@ -31,30 +31,25 @@
 
     <main>
         <div style="padding-top: 72px;"></div>
-        <div class="title">
-            <div>
-                <h1>Welcome to <span>Jains Spring Meadows</span></h1>
-                <h2>Where Convenience Meets Luxury.</h2>
+        <div class="about">
+            <div class="title">
+              <h2>About</h2>
+              <h3><span>Find Out More </span>About Us</h3>
             </div>
         </div>
-        <div class="image-container">
-            <div class="image-item"> 
-                <img class="home-image fade" src="assets/img/slides/jsm1.jpg" alt="">
-            </div>
-            <div class="image-item hide-image"> 
-                <img class="home-image fade" src="assets/img/slides/jsm2.jpg" alt="" loading="lazy">
-            </div>
-            <div class="image-item hide-image"> 
-                <img class="home-image fade" src="assets/img/slides/jsm3.jpg" alt="" loading="lazy">
-            </div>
-            <div class="image-item hide-image"> 
-                <img class="home-image fade" src="assets/img/slides/jsm4.jpg" alt="" loading="lazy">
+
+        <div class="container">
+            <div class="text-section">
+                <h3>About Jains Spring Meadows</h3>
+                <p>
+                    Spread over an area of 2.3 acres, Jains Spring Meadows is one of the spacious housing societies in the 
+                    Thazhambur, Chennai, Tamil Nadu. With all the required amenities available, Jains Spring Meadows is a 
+                    lush green paradise. 
+                </p>
+                <p>Total 192 flats spanning across 5 blocks.</p>
             </div>
             <div>
-                <span class="image-selector active" onclick="showImage(0)"></span>
-                <span class="image-selector" onclick="showImage(1)"></span>
-                <span class="image-selector" onclick="showImage(2)"></span>
-                <span class="image-selector" onclick="showImage(3)"></span>
+                <img class="fade" src="assets/img/gallery/about.jpg" alt="">
             </div>
         </div>
     </main>
@@ -128,28 +123,13 @@
         </div>
     </footer>
 
-    <script>    
+    <script>
         const toggle = document.querySelector('.menu-toggle'); 
         toggle.addEventListener('click', () => {
             const menu = document.querySelector('nav ul');
             menu.style.transition = 'all 0.5s ease-in-out';
             menu.style.left = menu.style.left == '0px' ? '-100%' : '0px';
         })
-
-        function showImage(index) {
-            const images = document.getElementsByClassName('image-item');
-            const selectors = document.getElementsByClassName('image-selector');
-
-            for(i = 0; i < images.length; i++) {
-                if (i == index) {
-                    selectors[i].classList.add('active');
-                    images[i].classList.remove('hide-image');
-                } else {
-                    selectors[i].classList.remove('active');
-                    images[i].classList.add('hide-image');
-                }
-            } 
-        };
     </script>
 </body>
 </html>
