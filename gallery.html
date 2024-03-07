@@ -16,11 +16,15 @@
                 justify-content: center;
             }
 
-            .gallery-image {
-                width: 378px;
-                height: 280px;
+            .image-item {
                 margin: 8px 8px;
+
+                .gallery-image {
+                    width: 378px;
+                    height: 280px;
+                }
             }
+
         }
     </style>
 </head>
@@ -47,16 +51,16 @@
     <main>
         <div style="padding-top: 72px;"></div>
         <div class="image-container">
-            <div>
+            <div class="image-item">
                 <img class="gallery-image" src="assets//img/slides/jsm1.jpg" alt="">
             </div>
-            <div>
+            <div class="image-item">
                 <img class="gallery-image" src="assets//img/slides/jsm2.jpg" alt="">
             </div>
-            <div>
+            <div class="image-item">
                 <img class="gallery-image" src="assets//img/slides/jsm3.jpg" alt="">
             </div>
-            <div>
+            <div class="image-item">
                 <img class="gallery-image" src="assets//img/slides/jsm4.jpg" alt="">
             </div>
         </div>     
