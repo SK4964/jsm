@@ -40,7 +40,7 @@ main {
         flex-wrap: wrap;
 
         div {
-            padding: 0px 16px;
+            margin: 0px 16px;            
         }
 
         .text-section {
