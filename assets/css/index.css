@@ -137,6 +137,14 @@ main {
                 object-fit: cover;
             }
         }
+
+        .amenities {
+            .amenities-container {
+                div {
+                    width: 304px;
+                }
+            }
+        }
     }
 }
 
