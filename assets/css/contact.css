@@ -1,4 +1,6 @@
 main {
+    padding: 16px 0px;
+    
     .contact {
         display: flex;
         flex-direction: column;
@@ -6,7 +8,7 @@ main {
 
         .title {
             text-align: center;
-            padding-bottom: 30px;
+            padding-bottom: 24px;
 
             h2 {
                 font-size: 13px;
@@ -27,13 +29,7 @@ main {
 
                 span {
                     color: black
-                    ;
                 }
-            }
-
-            p {
-                margin: 15px auto 0 auto;
-                font-weight: 600;
             }
         }
     }
@@ -43,8 +39,7 @@ main {
         flex-direction: column;
         align-items: center;
         gap: 16px;
-        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
-
+       
         .first-row {
             display: flex;
             justify-content: center;
@@ -57,10 +52,10 @@ main {
             }
     
             div {
-
                 flex: 1;
                 padding: 16px 0px;
-                box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+                background-color: white;
+                box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
     
                 h3 {
                     padding: 8px 0px;

@@ -1,9 +1,10 @@
-main {
+main { 
     .title {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-bottom: 16px;
+        padding: 16px 0px;
+        position: absolute;
 
         h1 {
             font-size: 48px;
@@ -25,10 +26,10 @@ main {
     }
 
     .image-container {
-
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding: 16px 0px;
 
         .fade {
             animation-name: fade;
@@ -36,10 +37,10 @@ main {
         }
     }
 
-    .image-item {
+    .image-item {        
         .home-image {
-            width: 1200px;
-            height: 600px;
+            width: 1440px;
+            height: 720px;
             object-fit: cover;
         }
     }
@@ -54,18 +55,57 @@ main {
 
     .image-selector {
         cursor: pointer;
-        height: 15px;
-        width: 15px;
-        margin: 4px 2px;
+        height: 16px;
+        width: 16px;
+        margin: 8px 4px;
         background-color: #bbb;
         border-radius: 50%;
         display: inline-block;
+
         transition: background-color 0.6s ease;
       }
       
     .active, .image-selector:hover {
         background-color: #717171;
     }
+
+    .amenities {
+        padding: 16px 16px;
+
+        h2 {
+            text-align: center;
+        }
+        .amenities-container {        
+            display: flex;
+            flex-wrap: wrap;
+            padding: 16px 0px;
+            justify-content: center;
+            gap: 16px;
+    
+            div {
+                width: 378px;
+                padding: 16px 32px;
+                background-color: white;
+                box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+    
+                svg {
+                    height: 32px;
+                    width: 32px;
+                    fill: #106eea;
+                    float: right;
+                }
+    
+                h4 { 
+                    padding: 8px 0px;
+                }
+
+                p {
+                    line-height: 1.4;
+                }
+            }
+        }
+    }
+
 }
 
 @keyframes fade {

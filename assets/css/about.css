@@ -35,16 +35,17 @@ main {
 
     .container {
         display: flex;
-        justify-content: center;        
-        gap: 48px;
+        justify-content: center;   
+        align-items: center;     
         flex-wrap: wrap;
+        gap: 48px;
 
         div {
-            margin: 0px 16px;            
+            margin: 8px 16px;            
         }
 
         .text-section {
-            width: 640px;
+            width: 960px;
         }
 
         .fade {
@@ -58,10 +59,20 @@ main {
         }
 
         p {
-            margin: 15px auto 0 auto;
+            margin: 8px auto 0 auto;
             font-weight: 400;
             line-height: 1.5;
         }
+
+        h4 {
+            margin-top: 8px;
+        }
+
+        svg {
+            height: 24px;
+            width: 24px;
+            fill: #106eea;
+        } 
     }
 }
 
