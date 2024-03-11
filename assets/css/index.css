@@ -69,8 +69,37 @@ main {
         background-color: #717171;
     }
 
+    .glimpse {
+        padding: 8px 16px;
+        
+        svg {
+            margin-right: 4px;                
+            height: 32px;
+            width: 32px;
+            fill: #106eea;
+            float: left;
+        }
+        
+        h2 {
+            text-align: center;
+        }
+
+        .glimpse-container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 16px 16px;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        p {    
+            line-height: 1.4;
+            text-align: justify;
+        }
+    }
+
     .amenities {
-        padding: 16px 16px;
+        padding: 8px 16px;
 
         h2 {
             text-align: center;
