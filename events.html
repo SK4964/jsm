@@ -40,57 +40,13 @@
         </div>
           
         <!-- Tab content -->
-        <div id="2024" class="tabcontent">
+        <div id="2024" class="tab-content">
+            <h4>Independence Day Celebration</h4>
+            <div id="independence-day" class="image-container">
+            </div>  
+
             <h4>Annual Day Celebration</h4>
-            <div class="image-container">
-                <div class="image-item">
-                    <img class="event-image" src="assets/img/events/2024/annual-day/001.jpg" alt="">
-                </div>
-                <div class="image-item">
-                    <img class="event-image" src="assets/img/events/2024/annual-day/002.jpg" alt="">
-                </div>
-                <div class="image-item">
-                    <img class="event-image" src="assets/img/events/2024/annual-day/001.jpg" alt="">
-                </div>
-                <div class="image-item">
-                    <img class="event-image" src="assets/img/events/2024/annual-day/002.jpg" alt="">
-                </div>
-                <div class="image-item">
-                    <img class="event-image" src="assets/img/events/2024/annual-day/001.jpg" alt="">
-                </div>
-                <div class="image-item">
-                    <img class="event-image" src="assets/img/events/2024/annual-day/002.jpg" alt="">
-                </div>
-                <div class="image-item">
-                    <img class="event-image" src="assets/img/events/2024/annual-day/003.jpg" alt="">
-                </div>
-                <div class="image-item">
-                    <img class="event-image" src="assets/img/events/2024/annual-day/004.jpg" alt="">
-                </div>
-                <div class="image-item">
-                    <img class="event-image" src="assets/img/events/2024/annual-day/005.jpg" alt="">
-                </div>
-                <div class="image-item">
-                    <img class="event-image" src="assets/img/events/2024/annual-day/006.jpg" alt="">
-                </div>
-                <div class="image-item">
-                    <img class="event-image" src="assets/img/events/2024/annual-day/007.jpg" alt="">
-                </div>
-                <div class="image-item">
-                    <img class="event-image" src="assets/img/events/2024/annual-day/008.jpg" alt="">
-                </div>
-                <div class="image-item">
-                    <img class="event-image" src="assets/img/events/2024/annual-day/009.jpg" alt="" loading="lazy">
-                </div>
-                <div class="image-item">
-                    <img class="event-image" src="assets/img/events/2024/annual-day/010.jpg" alt="" loading="lazy">
-                </div>
-                <div class="image-item">
-                    <img class="event-image" src="assets/img/events/2024/annual-day/011.jpg" alt="" loading="lazy">
-                </div>
-                <div class="image-item">
-                    <img class="event-image" src="assets/img/events/2024/annual-day/012.jpg" alt="" loading="lazy">
-                </div>                
+            <div id="annual-day" class="image-container">                
             </div>
 
             <h4>Pongal Celebration</h4>
@@ -105,8 +61,8 @@
         </div>
 
         <div id="2023" class="tabcontent">
-        <h3>Tokyo</h3>
-        <p>Tokyo is the capital of Japan.</p>
+            <h3>Tokyo</h3>
+            <p>Tokyo is the capital of Japan.</p>
         </div>
    
     </main>
@@ -181,6 +137,30 @@
     </footer>
 
     <script>
+        let content = "";
+        //Load independence day images
+        const independenceDay = document.getElementById("independence-day");
+        for(let i=1; i<67; i++) {
+            content += `<div class="image-item">
+                            <img class="event-image" 
+                                src="assets/img/events/2024/indep-day/${i.toString().padStart(3, '0')}.jpg" 
+                                alt="" ${i > 8 ? "loading='lazy'": ''}>
+                        </div>`;
+        }
+        independenceDay.innerHTML = content;
+
+        //Load annual day images
+        content = ""
+        const annualDay = document.getElementById("annual-day");
+        for(let i=1; i<14; i++) {
+            content += `<div class="image-item">
+                            <img class="event-image" 
+                                src="assets/img/events/2024/annual-day/${i.toString().padStart(3, '0')}.jpg" 
+                                alt="" ${i > 8 ? "loading='lazy'": ''}>
+                        </div>`;
+        }
+        annualDay.innerHTML = content;
+
         const toggle = document.querySelector('.menu-toggle'); 
         toggle.addEventListener('click', () => {
             const menu = document.querySelector('nav ul');

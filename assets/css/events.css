@@ -29,17 +29,14 @@ main {
     }
     
     /* Style the tab content */
-    .tabcontent {
+    .tab-content {
         display: none;
         padding: 6px 12px;
         border: 1px solid #ccc;
         border-top: none;
-    }
-    
-    .tabcontent {
         animation: fadeEffect 1s; /* Fading effect takes 1 second */
     }
-      
+         
     .image-container {
         display: flex;
         flex-wrap: wrap;
@@ -47,12 +44,15 @@ main {
     }
 
     .image-item {
+        width: 756px;
         margin: 8px 8px;
         box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+        align-self: center;
 
-        .event-image {
-            width: 378px;
-            height: 280px;
+        .event-image {            
+            object-fit: contain;
+            max-width: 100%;
+            max-height: 100%;
         }
     }
 
@@ -67,3 +67,12 @@ main {
     from {opacity: 0;}
     to {opacity: 1;}
 }
+
+@media (max-width: 768px) {
+    main {
+        .image-item {   
+            width: 378px;
+        }
+    }
+}
+
