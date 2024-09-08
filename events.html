@@ -7,9 +7,31 @@
     <title>Jains Spring Meadows - Terms and Conditions</title>
     <link href="assets/img/favicon.png" rel="icon">
     <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/events.css">
     <style>
+        main {
+            padding: 16px 0px;
 
+            .image-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .image-item {
+                margin: 8px 8px;
+                box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+
+                .gallery-image {
+                    width: 378px;
+                    height: 280px;
+                }
+            }
+            div {
+                p {
+                    margin: 8px 4px;
+                }
+            }
+        }
     </style>
 </head>
 <body>
@@ -34,37 +56,37 @@
 
     <main>
         <div style="padding-top: 64px;"></div>
-        <div class="tab">
-            <!-- <button class="tablinks" onclick="openTab(event, '2025')"><b>2025</b></button> -->
-            <button class="tablinks" onclick="openTab(event, '2024')" id="defaultOpen"><b>2024</b></button>            
-        </div>
-          
-        <!-- Tab content -->
-        <div id="2024" class="tab-content">
-            <h4>Independence Day Celebration</h4>
-            <div id="independence-day" class="image-container">
-            </div>  
-
-            <h4>Annual Day Celebration</h4>
-            <div id="annual-day" class="image-container">                
-            </div>
-
-            <h4>Pongal Celebration</h4>
-            <div class="image-container">
-                <div class="image-item">
-                    <img class="event-image" src="assets/img/events/2024/pongal/001.jpg" alt="" loading="lazy">
-                </div>
-                <div class="image-item">
-                    <img class="event-image" src="assets/img/events/2024/pongal/002.jpg" alt="" loading="lazy">
+        <div class="image-container">            
+            <div class="image-item">
+                <a href="event-viewer.html?year=2024&tag=indep-day&count=8">
+                    <img class="gallery-image" src="assets/img/events/2024/indep-day/001.jpg" alt="">
+                </a>
+                <div>
+                    <p><b>Event Name: </b>Independence Day</p>
+                    <p><b>Date:</b> 15/08/2024</p>
                 </div>
             </div>
-        </div>
 
-        <div id="2023" class="tabcontent">
-            <h3>Tokyo</h3>
-            <p>Tokyo is the capital of Japan.</p>
-        </div>
-   
+            <div class="image-item">
+                <a href="event-viewer.html?year=2024&tag=pongal&count=2">
+                    <img class="gallery-image" src="assets/img/events/2024/pongal/001.jpg" alt="">
+                </a>
+                <div>
+                    <p><b>Event Name: </b>Pongal</p>
+                    <p><b>Date:</b> 14/01/2024</p>
+                </div>
+            </div>
+
+            <div class="image-item">
+                <a href="event-viewer.html?year=2024&tag=annual-day&count=13">
+                    <img class="gallery-image" src="assets/img/events/2024/annual-day/001.jpg" alt="">
+                </a>
+                <div>
+                    <p><b>Event Name: </b>Annual Day</p>
+                    <p><b>Date:</b> 12/01/2024</p>
+                </div>
+            </div>
+        </div>     
     </main>
 
     <footer>
@@ -137,59 +159,12 @@
     </footer>
 
     <script>
-        let content = "";
-        //Load independence day images
-        const independenceDay = document.getElementById("independence-day");
-        for(let i=1; i<67; i++) {
-            content += `<div class="image-item">
-                            <img class="event-image" 
-                                src="assets/img/events/2024/indep-day/${i.toString().padStart(3, '0')}.jpg" 
-                                alt="" ${i > 8 ? 'loading="lazy"' : ''}>
-                        </div>`;
-        }
-        independenceDay.innerHTML = content;
-
-        //Load annual day images
-        content = ""
-        const annualDay = document.getElementById("annual-day");
-        for(let i=1; i<14; i++) {
-            content += `<div class="image-item">
-                            <img class="event-image" 
-                                src="assets/img/events/2024/annual-day/${i.toString().padStart(3, '0')}.jpg" 
-                                alt="" loading="lazy"}>
-                        </div>`;
-        }
-        annualDay.innerHTML = content;
-
         const toggle = document.querySelector('.menu-toggle'); 
         toggle.addEventListener('click', () => {
             const menu = document.querySelector('nav ul');
             menu.style.transition = 'all 0.5s ease-in-out';
             menu.style.left = menu.style.left == '0px' ? '-100%' : '0px';
         })
-
-        function openTab(evt, year) {
-            // Declare all variables
-            var i, tabcontent, tablinks;
-
-            // Get all elements with class="tabcontent" and hide them
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-
-            // Get all elements with class="tablinks" and remove the class "active"
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-
-            // Show the current tab, and add an "active" class to the button that opened the tab
-            document.getElementById(year).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
-
-        document.getElementById("defaultOpen").click();
     </script>
 </body>
 </html>

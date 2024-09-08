@@ -18,12 +18,15 @@
             }
 
             .image-item {
+                width: 756px;
                 margin: 8px 8px;
                 box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+                align-self: center;
 
-                .gallery-image {
-                    width: 378px;
-                    height: 280px;
+                .event-image {            
+                    object-fit: contain;
+                    max-width: 100%;
+                    max-height: 100%;
                 }
             }
         }
@@ -50,81 +53,10 @@
     </header>
 
     <main>
-        <div style="padding-top: 64px;"></div>
-        <div class="image-container">
-            <div class="image-item">
-                <img class="gallery-image" src="assets//img/gallery/001.jpg" alt="">
-            </div>
-            <div class="image-item">
-                <img class="gallery-image" src="assets//img/gallery/002.jpg" alt="">
-            </div>
-            <div class="image-item">
-                <img class="gallery-image" src="assets//img/gallery/003.jpg" alt="">
-            </div>
-            <div class="image-item">
-                <img class="gallery-image" src="assets//img/gallery/004.jpg" alt="">
-            </div>
-            <div class="image-item">
-                <img class="gallery-image" src="assets//img/gallery/005.jpg" alt="">
-            </div>
-            <div class="image-item">
-                <img class="gallery-image" src="assets//img/gallery/006.jpg" alt="">
-            </div>
-            <div class="image-item">
-                <img class="gallery-image" src="assets//img/gallery/007.jpg" alt="">
-            </div>
-            <div class="image-item">
-                <img class="gallery-image" src="assets//img/gallery/008.jpg" alt="">
-            </div>
-            <div class="image-item">
-                <img class="gallery-image" src="assets//img/gallery/009.jpg" alt="" loading="lazy">                
-            </div>
-            <div class="image-item">
-                <img class="gallery-image" src="assets//img/gallery/010.jpg" alt="" loading="lazy">
-            </div>
-            <div class="image-item">
-                <img class="gallery-image" src="assets//img/gallery/011.jpg" alt="" loading="lazy">
-            </div>
-            <div class="image-item">
-                <img class="gallery-image" src="assets//img/gallery/012.jpg" alt="" loading="lazy">
-            </div>
-            <div class="image-item">
-                <img class="gallery-image" src="assets//img/gallery/013.jpg" alt="" loading="lazy">
-            </div>
-            <div class="image-item">
-                <img class="gallery-image" src="assets//img/gallery/014.jpg" alt="" loading="lazy">
-            </div>
-            <div class="image-item">
-                <img class="gallery-image" src="assets//img/gallery/015.jpg" alt="" loading="lazy">
-            </div>
-            <div class="image-item">
-                <img class="gallery-image" src="assets//img/gallery/016.jpg" alt="" loading="lazy">
-            </div>
-            <div class="image-item">
-                <img class="gallery-image" src="assets//img/gallery/017.jpg" alt="" loading="lazy">
-            </div>
-            <div class="image-item">
-                <img class="gallery-image" src="assets//img/gallery/018.jpg" alt="" loading="lazy">
-            </div>
-            <div class="image-item">
-                <img class="gallery-image" src="assets//img/gallery/019.jpg" alt="" loading="lazy">
-            </div>              
-            <div class="image-item">
-                <img class="gallery-image" src="assets//img/gallery/020.jpg" alt="" loading="lazy">
-            </div>
-            <div class="image-item">
-                <img class="gallery-image" src="assets//img/gallery/021.jpg" alt="" loading="lazy">                
-            </div>
-            <div class="image-item">
-                <img class="gallery-image" src="assets//img/gallery/022.jpg" alt="" loading="lazy">
-            </div>
-            <div class="image-item">
-                <img class="gallery-image" src="assets//img/gallery/023.jpg" alt="" loading="lazy">
-            </div>
-            <div class="image-item">
-                <img class="gallery-image" src="assets//img/gallery/024.jpg" alt="" loading="lazy">
-            </div>                              
-        </div>     
+        <div style="padding-top: 64px;"></div>     
+
+        <div id="image-viewer" class="image-container">
+        </div>                  
     </main>
 
     <footer>
@@ -203,6 +135,35 @@
             menu.style.transition = 'all 0.5s ease-in-out';
             menu.style.left = menu.style.left == '0px' ? '-100%' : '0px';
         })
+
+        var urlParams;
+        (window.onpopstate = function () {
+            var match,
+                pl = /\+/g,  // Regex for replacing addition symbol with a space
+                search = /([^&=]+)=?([^&]*)/g,
+                decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+                query  = window.location.search.substring(1);
+        
+            urlParams = {};
+            while (match = search.exec(query))
+            urlParams[decode(match[1])] = decode(match[2]);
+        })();
+
+        let content = "";
+        let year = (urlParams["year"]);
+        let tag = (urlParams["tag"]);
+        let count = (urlParams["count"]);
+
+        const independenceDay = document.getElementById("image-viewer");
+        for(let i = 1; i <= count; i++) {
+            content += `<div class="image-item">
+                            <img class="event-image" 
+                                src="assets/img/events/${year}/${tag}/${i.toString().padStart(3, '0')}.jpg" 
+                                alt="" ${i > 4 ? 'loading="lazy"' : ''}>
+                        </div>`;
+        }
+
+        independenceDay.innerHTML = content;
     </script>
 </body>
 </html>
