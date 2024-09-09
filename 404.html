@@ -146,14 +146,9 @@
         </div>
     </footer>
 
+    <script src="assets/js/common.js"></script>
+    
     <script>        
-        const toggle = document.querySelector('.menu-toggle'); 
-        toggle.addEventListener('click', () => {
-            const menu = document.querySelector('nav ul');
-            menu.style.transition = 'all 0.5s ease-in-out';
-            menu.style.left = menu.style.left == '0px' ? '-100%' : '0px';
-        })
-
         function showImage(index) {
             const images = document.getElementsByClassName('image-item');
             const selectors = document.getElementsByClassName('image-selector');
